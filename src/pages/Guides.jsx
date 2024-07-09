@@ -2,7 +2,7 @@ import React from "react";
 import SideBar from "../components/SideBar";
 import { Link, Outlet } from "react-router-dom";
 
-export const Guides = () => {
+const Guides = () => {
   return (
     <>
       <SideBar />
@@ -91,8 +91,8 @@ export const Guides = () => {
                     viewBox="0 0 16 16"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M7.333 2.667H5.2c-1.12 0-1.68 0-2.108.218a2 2 0 0 0-.874.874C2 4.187 2 4.747 2 5.867V10.8c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874C3.52 14 4.08 14 5.2 14h4.933c1.12 0 1.68 0 2.108-.218a2 2 0 0 0 .874-.874c.218-.428.218-.988.218-2.108V8.667m-4.666 2.666h-4M10 8.667H4.667m8.747-6.081a2 2 0 1 1-2.828 2.828 2 2 0 0 1 2.828-2.828Z"
                     ></path>
                   </svg>
@@ -138,3 +138,5 @@ export const Guides = () => {
     </>
   );
 };
+
+export default Guides;
