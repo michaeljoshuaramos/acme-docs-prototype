@@ -6,12 +6,22 @@ const Spacer = () => {
 };
 
 export const NavigationBar = () => {
-  // const [activeLink, setActiveLink] = useState("/");
-  // const location = useLocation();
+  const [activeLink, setActiveLink] = useState("/");
+  const location = useLocation();
 
-  // useEffect(() => {
-  //   setActiveLink(location.pathname);
-  // }, [location.pathname]);
+  const applyLinkStyle = (path) => {
+    return `cursor-pointer rounded-md px-2 py-1 transition text-[14px] font-medium leading-[16px]
+      ${
+        activeLink === path
+          ? "text-gray-800 bg-gray-100"
+          : "text-gray-600 hover:bg-gray-100"
+      }
+    `;
+  };
+
+  useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location.pathname]);
 
   return (
     <>
@@ -19,15 +29,18 @@ export const NavigationBar = () => {
         <div className="flex divide-x">
           <span className="pr-6 font-semibold text-black">Acme Docs</span>
           <div className="pl-6 space-x-4">
-            <a className="cursor-pointer rounded-md px-2 py-1 transition text-[14px] font-medium leading-[16px] text-gray-600 hover:bg-gray-100">
+            <Link to="/" className={applyLinkStyle("/")}>
               Guides
-            </a>
-            <a className="cursor-pointer rounded-md px-2 py-1 transition text-[14px] font-medium leading-[16px] text-gray-600 hover:bg-gray-100">
+            </Link>
+            <Link
+              to="/api-reference"
+              className={applyLinkStyle("/api-reference")}
+            >
               API Reference
-            </a>
-            <a className="cursor-pointer rounded-md px-2 py-1 transition text-[14px] font-medium leading-[16px] text-gray-600 hover:bg-gray-100">
+            </Link>
+            <Link to="/changelog" className={applyLinkStyle("/changelog")}>
               Changelog
-            </a>
+            </Link>
           </div>
         </div>
         <Spacer />
