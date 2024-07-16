@@ -6,9 +6,9 @@ const Guides = () => {
   return (
     <>
       <SideBar />
-      <div className="relative w-full pt-[68px] lg:pl-[310px] overflow-y-hidden">
+      <div className="h-screen w-full pt-[68px] lg:pl-[310px] overflow-y-hidden">
         <div className="flex h-full justify-center text-gray-800">
-          <div className="scrollbar-hide h-full max-w-[800px] grow overflow-y-scroll px-4 pt-4 md:px-16">
+          <div className="scrollbar-hide h-full max-w-[800px] grow overflow-y-hidden px-4 pt-4 md:px-16">
             <article className="max-w-4xl pb-20 pt-10">
               <div>
                 <span
