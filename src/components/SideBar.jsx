@@ -1,5 +1,16 @@
 import React from "react";
 
+const Link = ({ children }) => {
+  return (
+    <a
+      href=""
+      className="block cursor-pointer rounded-md px-2 py-1 text-gray-600 hover:bg-gray-50 hover:text-gray-800"
+    >
+      {children}
+    </a>
+  );
+};
+
 const SideBar = () => {
   return (
     <div className="fixed left-0 top-[68px] h-[calc(100vh-68px)] w-[310px] z-10">
@@ -16,18 +27,7 @@ const SideBar = () => {
 
         {/* REFACTOR: Container for links*/}
         <div className="text-[14px] font-normal leading-[20px]">
-          <a
-            href=""
-            className="block cursor-pointer rounded-md px-2 py-1 text-gray-600 hover:bg-gray-50 hover:text-gray-800"
-          >
-            Transaction and Transfers
-          </a>
-          <a
-            href=""
-            className="block cursor-pointer rounded-md px-2 py-1 text-gray-600 hover:bg-gray-50 hover:text-gray-800"
-          >
-            Transfer approvals
-          </a>
+          <Link>Transaction and Transfers</Link>
         </div>
       </div>
     </div>
