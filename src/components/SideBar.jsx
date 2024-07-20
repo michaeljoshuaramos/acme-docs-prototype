@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const SideBar = () => {
   return (
-    <div className="fixed left-0 top-[68px] h-[calc(100vh-68px)] w-[310px] z-10 bg-white font-medium px-4 py-4 border-r border-gray-100 overflow-y-scroll">
+    <div className="fixed left-0 top-[68px] z-10 h-[calc(100vh-68px)] w-[310px] overflow-y-scroll border-r border-gray-100 bg-white px-4 py-4 font-medium">
       <div className="space-y-4 divide-y divide-gray-100">
         {sidebarStructure.map((section, sectionIndex) => (
           <Section key={sectionIndex} section={section} />
@@ -279,7 +279,7 @@ const downCaret = (
     fill="none"
     stroke="currentColor"
     strokeWidth="1.75"
-    className="transition-all rotate-90"
+    className="rotate-90 transition-all"
     viewBox="0 0 14 14"
   >
     <path strokeLinecap="round" strokeLinejoin="round" d="m6 12 4-4-4-4"></path>
@@ -297,7 +297,7 @@ const Link = ({ children }) => {
 const Section = ({ section }) => {
   return (
     <div className="pt-4">
-      <span className="block uppercase font-semibold text-gray-400 text-[12px] leading-[16px] px-2 py-1">
+      <span className="block px-2 py-1 text-[12px] font-semibold uppercase leading-[16px] text-gray-400">
         {section.title}
       </span>
 
@@ -314,7 +314,7 @@ const SubSection = ({ subsection }) => {
   return (
     <div>
       <div
-        className="flex items-center px-2 py-1 rounded-md hover:bg-gray-50"
+        className="flex items-center rounded-md px-2 py-1 hover:bg-gray-50"
         onClick={() => setIsOpen(!isOpen)}
         tabIndex="0"
         role="button"
@@ -324,7 +324,7 @@ const SubSection = ({ subsection }) => {
           }
         }}
       >
-        <span className="font-semibold text-gray-600 text-[14px] leading-[20px] py-1">
+        <span className="py-1 text-[14px] font-semibold leading-[20px] text-gray-600">
           {subsection.title}
         </span>
         <div className="flex grow" />

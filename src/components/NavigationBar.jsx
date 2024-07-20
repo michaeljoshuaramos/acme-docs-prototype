@@ -25,10 +25,10 @@ export const NavigationBar = () => {
 
   return (
     <>
-      <nav className="fixed z-10 w-full bg-white/95 backdrop-blur border-b border-gray-100 flex items-center px-6 h-[68px]">
+      <nav className="fixed z-10 flex h-[68px] w-full items-center border-b border-gray-100 bg-white/95 px-6 backdrop-blur">
         <div className="flex divide-x">
           <span className="pr-6 font-semibold text-black">Acme Docs</span>
-          <div className="pl-6 space-x-4">
+          <div className="space-x-4 pl-6">
             <Link to="/" className={applyLinkStyle("/")}>
               Guides
             </Link>
@@ -45,7 +45,7 @@ export const NavigationBar = () => {
         </div>
         <Spacer />
         <div>
-          <button className="cursor-pointer bg-gray-500 px-3 py-1 rounded-md text-white text-[14px] font-medium leading-[20px]">
+          <button className="cursor-pointer rounded-md bg-gray-500 px-3 py-1 text-[14px] font-medium leading-[20px] text-white">
             Login
           </button>
         </div>

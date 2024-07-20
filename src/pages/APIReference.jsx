@@ -10,12 +10,12 @@ const ErrorSection = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 items-start gap-8 py-8 lg:grid-cols-2 lg:py-12 lg:gap-x-12">
+    <div className="grid grid-cols-1 items-start gap-8 py-8 lg:grid-cols-2 lg:gap-x-12 lg:py-12">
       <div className="space-y-5">
         <div>
           <span
             id="errors"
-            className="article-scrollspy-child scroll-mt-[100px] text-[22px] sm:text-[24px] font-medium leading-[26px] sm:leading-[28px] inline-block"
+            className="article-scrollspy-child inline-block scroll-mt-[100px] text-[22px] font-medium leading-[26px] sm:text-[24px] sm:leading-[28px]"
           >
             Errors
           </span>
@@ -38,23 +38,23 @@ const ErrorSection = () => {
         </div>
         <div className="space-y-2 divide-y divide-gray-100 pt-4 md:pt-0">
           <div>
-            <span className="text-gray-500 text-[20px] font-medium leading-[24px] tracking-tighter inline-block">
+            <span className="inline-block text-[20px] font-medium leading-[24px] tracking-tighter text-gray-500">
               Attributes
             </span>
           </div>
           <div className="divide-y divide-gray-100">
             <div className="py-3">
               <div
-                className="flex flex-wrap items-center space-x-1 group scroll-mt-[100px]"
+                className="group flex scroll-mt-[100px] flex-wrap items-center space-x-1"
                 id="error.detail"
               >
                 <div className="max-w-full">
-                  <span className="w-full break-words text-[16px] font-medium leading-[24px] inline-block tracking-tight">
+                  <span className="inline-block w-full break-words text-[16px] font-medium leading-[24px] tracking-tight">
                     detail
                   </span>
                 </div>
                 <div>
-                  <span className="text-gray-400 text-[14px] font-medium leading-[20px] inline-block">
+                  <span className="inline-block text-[14px] font-medium leading-[20px] text-gray-400">
                     string
                   </span>
                 </div>
@@ -71,7 +71,7 @@ const ErrorSection = () => {
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="1.5"
-                      className="group-hover:text-gray-600 text-gray-300 md:text-gray-200 cursor-pointer"
+                      className="cursor-pointer text-gray-300 group-hover:text-gray-600 md:text-gray-200"
                       viewBox="0 0 16 16"
                     >
                       <path
@@ -84,7 +84,7 @@ const ErrorSection = () => {
                 </div>
               </div>
               <div>
-                <span className="max-w-[550px] text-gray-700 text-[14px] font-normal leading-[20px] inline-block">
+                <span className="inline-block max-w-[550px] text-[14px] font-normal leading-[20px] text-gray-700">
                   <div className="style_styledmarkdown__1iaDD">
                     <p>Additional information about this particular error.</p>
                   </div>
@@ -93,16 +93,16 @@ const ErrorSection = () => {
             </div>
             <div className="py-3">
               <div
-                className="flex flex-wrap items-center space-x-1 group scroll-mt-[100px]"
+                className="group flex scroll-mt-[100px] flex-wrap items-center space-x-1"
                 id="error.status"
               >
                 <div className="max-w-full">
-                  <span className="w-full break-words text-[16px] font-medium leading-[24px] inline-block tracking-tight">
+                  <span className="inline-block w-full break-words text-[16px] font-medium leading-[24px] tracking-tight">
                     status
                   </span>
                 </div>
                 <div>
-                  <span className="text-gray-400 text-[14px] font-medium leading-[20px] inline-block">
+                  <span className="inline-block text-[14px] font-medium leading-[20px] text-gray-400">
                     string
                   </span>
                 </div>
@@ -116,7 +116,7 @@ const ErrorSection = () => {
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="1.5"
-                      className="group-hover:text-gray-600 text-gray-300 md:text-gray-200 cursor-pointer"
+                      className="cursor-pointer text-gray-300 group-hover:text-gray-600 md:text-gray-200"
                       viewBox="0 0 16 16"
                     >
                       <path
@@ -129,7 +129,7 @@ const ErrorSection = () => {
                 </div>
               </div>
               <div>
-                <span className="max-w-[550px] text-gray-700 text-[14px] font-normal leading-[20px] inline-block">
+                <span className="inline-block max-w-[550px] text-[14px] font-normal leading-[20px] text-gray-700">
                   <div className="style_styledmarkdown__1iaDD">
                     <p>
                       The HTTP status code of the error is also included in the
@@ -141,16 +141,16 @@ const ErrorSection = () => {
             </div>
             <div className="py-3">
               <div
-                className="flex flex-wrap items-center space-x-1 group scroll-mt-[100px]"
+                className="group flex scroll-mt-[100px] flex-wrap items-center space-x-1"
                 id="error.title"
               >
                 <div className="max-w-full">
-                  <span className="w-full break-words text-[16px] font-medium leading-[24px] inline-block tracking-tight">
+                  <span className="inline-block w-full break-words text-[16px] font-medium leading-[24px] tracking-tight">
                     title
                   </span>
                 </div>
                 <div>
-                  <span className="text-gray-400 text-[14px] font-medium leading-[20px] inline-block">
+                  <span className="inline-block text-[14px] font-medium leading-[20px] text-gray-400">
                     string
                   </span>
                 </div>
@@ -164,7 +164,7 @@ const ErrorSection = () => {
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="1.5"
-                      className="group-hover:text-gray-600 text-gray-300 md:text-gray-200 cursor-pointer"
+                      className="cursor-pointer text-gray-300 group-hover:text-gray-600 md:text-gray-200"
                       viewBox="0 0 16 16"
                     >
                       <path
@@ -177,7 +177,7 @@ const ErrorSection = () => {
                 </div>
               </div>
               <div>
-                <span className="max-w-[550px] text-gray-700 text-[14px] font-normal leading-[20px] inline-block">
+                <span className="inline-block max-w-[550px] text-[14px] font-normal leading-[20px] text-gray-700">
                   <div className="style_styledmarkdown__1iaDD">
                     <p>A human-readable string explaining the type of error.</p>
                   </div>
@@ -186,16 +186,16 @@ const ErrorSection = () => {
             </div>
             <div className="py-3">
               <div
-                className="flex flex-wrap items-center space-x-1 group scroll-mt-[100px]"
+                className="group flex scroll-mt-[100px] flex-wrap items-center space-x-1"
                 id="error.type"
               >
                 <div className="max-w-full">
-                  <span className="w-full break-words text-[16px] font-medium leading-[24px] inline-block tracking-tight">
+                  <span className="inline-block w-full break-words text-[16px] font-medium leading-[24px] tracking-tight">
                     type
                   </span>
                 </div>
                 <div>
-                  <span className="text-gray-400 text-[14px] font-medium leading-[20px] inline-block">
+                  <span className="inline-block text-[14px] font-medium leading-[20px] text-gray-400">
                     enum
                   </span>
                 </div>
@@ -209,7 +209,7 @@ const ErrorSection = () => {
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="1.5"
-                      className="group-hover:text-gray-600 text-gray-300 md:text-gray-200 cursor-pointer"
+                      className="cursor-pointer text-gray-300 group-hover:text-gray-600 md:text-gray-200"
                       viewBox="0 0 16 16"
                     >
                       <path
@@ -222,7 +222,7 @@ const ErrorSection = () => {
                 </div>
               </div>
               <div>
-                <span className="max-w-[550px] text-gray-700 text-[14px] font-normal leading-[20px] inline-block">
+                <span className="inline-block max-w-[550px] text-[14px] font-normal leading-[20px] text-gray-700">
                   <div className="style_styledmarkdown__1iaDD">
                     <p>
                       The type of error that occurred. This is a
@@ -248,9 +248,9 @@ const ErrorSection = () => {
           </div>
         </div>
       </div>
-      <div className="top-24 w-full sticky text-white">
-        <div className="relative bg-gray-800 rounded-xl shadow-xl">
-          <div className="scrollbar-hide relative overflow-hidden py-5 font-mono text-[13px] leading-[20px] pl-4">
+      <div className="sticky top-24 w-full text-white">
+        <div className="relative rounded-xl bg-gray-800 shadow-xl">
+          <div className="scrollbar-hide relative overflow-hidden py-5 pl-4 font-mono text-[13px] leading-[20px]">
             <div className="relative flex">
               <div
                 aria-hidden="true"
@@ -315,9 +315,9 @@ const ErrorSection = () => {
 
 const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
   return (
-    <div className="border border-gray-200 bg-gray-0 block rounded-[8px]">
+    <div className="bg-gray-0 block rounded-[8px] border border-gray-200">
       <button
-        className="group flex items-center space-x-1 rounded-t-[8px] px-2 py-0.5 transition-colors hover:bg-gray-100 w-full bg-gray-100"
+        className="group flex w-full items-center space-x-1 rounded-t-[8px] bg-gray-100 px-2 py-0.5 transition-colors hover:bg-gray-100"
         onClick={handlePossibleValuesOpen}
       >
         <svg
@@ -337,7 +337,7 @@ const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
           ></path>
         </svg>
         <div className="grow text-left">
-          <span className="text-[14px] font-medium leading-[20px] inline-block">
+          <span className="inline-block text-[14px] font-medium leading-[20px]">
             Possible values
           </span>
         </div>
@@ -373,7 +373,7 @@ const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
             </div>
           </div>
           <div>
-            <span className="text-gray-600 text-[14px] font-normal leading-[20px] inline-block">
+            <span className="inline-block text-[14px] font-normal leading-[20px] text-gray-600">
               <div className="style_styledmarkdown__1iaDD">
                 <p>HTTP status 404.</p>
               </div>
@@ -410,7 +410,7 @@ const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
             </div>
           </div>
           <div>
-            <span className="text-gray-600 text-[14px] font-normal leading-[20px] inline-block">
+            <span className="inline-block text-[14px] font-normal leading-[20px] text-gray-600">
               <div className="style_styledmarkdown__1iaDD">
                 <p>HTTP status 403.</p>
               </div>
@@ -447,7 +447,7 @@ const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
             </div>
           </div>
           <div>
-            <span className="text-gray-600 text-[14px] font-normal leading-[20px] inline-block">
+            <span className="inline-block text-[14px] font-normal leading-[20px] text-gray-600">
               <div className="style_styledmarkdown__1iaDD">
                 <p>HTTP status 409.</p>
               </div>
@@ -484,7 +484,7 @@ const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
             </div>
           </div>
           <div>
-            <span className="text-gray-600 text-[14px] font-normal leading-[20px] inline-block">
+            <span className="inline-block text-[14px] font-normal leading-[20px] text-gray-600">
               <div className="style_styledmarkdown__1iaDD">
                 <p>HTTP status 403.</p>
               </div>
@@ -521,7 +521,7 @@ const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
             </div>
           </div>
           <div>
-            <span className="text-gray-600 text-[14px] font-normal leading-[20px] inline-block">
+            <span className="inline-block text-[14px] font-normal leading-[20px] text-gray-600">
               <div className="style_styledmarkdown__1iaDD">
                 <p>HTTP status 500.</p>
               </div>
@@ -558,7 +558,7 @@ const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
             </div>
           </div>
           <div>
-            <span className="text-gray-600 text-[14px] font-normal leading-[20px] inline-block">
+            <span className="inline-block text-[14px] font-normal leading-[20px] text-gray-600">
               <div className="style_styledmarkdown__1iaDD">
                 <p>HTTP status 401.</p>
               </div>
@@ -595,7 +595,7 @@ const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
             </div>
           </div>
           <div>
-            <span className="text-gray-600 text-[14px] font-normal leading-[20px] inline-block">
+            <span className="inline-block text-[14px] font-normal leading-[20px] text-gray-600">
               <div className="style_styledmarkdown__1iaDD">
                 <p>HTTP status 409.</p>
               </div>
@@ -632,7 +632,7 @@ const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
             </div>
           </div>
           <div>
-            <span className="text-gray-600 text-[14px] font-normal leading-[20px] inline-block">
+            <span className="inline-block text-[14px] font-normal leading-[20px] text-gray-600">
               <div className="style_styledmarkdown__1iaDD">
                 <p>HTTP status 400.</p>
               </div>
@@ -669,7 +669,7 @@ const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
             </div>
           </div>
           <div>
-            <span className="text-gray-600 text-[14px] font-normal leading-[20px] inline-block">
+            <span className="inline-block text-[14px] font-normal leading-[20px] text-gray-600">
               <div className="style_styledmarkdown__1iaDD">
                 <p>HTTP status 400.</p>
               </div>
@@ -706,7 +706,7 @@ const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
             </div>
           </div>
           <div>
-            <span className="text-gray-600 text-[14px] font-normal leading-[20px] inline-block">
+            <span className="inline-block text-[14px] font-normal leading-[20px] text-gray-600">
               <div className="style_styledmarkdown__1iaDD">
                 <p>HTTP status 404.</p>
               </div>
@@ -743,7 +743,7 @@ const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
             </div>
           </div>
           <div>
-            <span className="text-gray-600 text-[14px] font-normal leading-[20px] inline-block">
+            <span className="inline-block text-[14px] font-normal leading-[20px] text-gray-600">
               <div className="style_styledmarkdown__1iaDD">
                 <p>HTTP status 403.</p>
               </div>
@@ -780,7 +780,7 @@ const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
             </div>
           </div>
           <div>
-            <span className="text-gray-600 text-[14px] font-normal leading-[20px] inline-block">
+            <span className="inline-block text-[14px] font-normal leading-[20px] text-gray-600">
               <div className="style_styledmarkdown__1iaDD">
                 <p>HTTP status 429.</p>
               </div>
@@ -794,9 +794,9 @@ const PossibleValuesPanel = ({ handlePossibleValuesOpen }) => {
 
 const PossibleValuesButton = ({ handlePossibleValuesOpen }) => {
   return (
-    <div className="bg-gray-0 border border-gray-200 inline-block overflow-hidden rounded-[8px]">
+    <div className="bg-gray-0 inline-block overflow-hidden rounded-[8px] border border-gray-200">
       <button
-        className="flex items-center space-x-1 px-2 py-0.5 transition-colors hover:bg-gray-100 group rounded-t-[8px] bg-gray-0"
+        className="bg-gray-0 group flex items-center space-x-1 rounded-t-[8px] px-2 py-0.5 transition-colors hover:bg-gray-100"
         onClick={handlePossibleValuesOpen}
       >
         <svg
@@ -828,10 +828,10 @@ const APIReference = () => {
       <div className="pt-[68px] lg:pl-[310px]">
         <div className="px-4 lg:px-12">
           <div className="divide-y">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-8">
+            <div className="grid grid-cols-1 gap-8 py-8 lg:grid-cols-2">
               <div className="space-y-5">
                 <div>
-                  <span className="text-[32px] sm:text-[40px] font-bold">
+                  <span className="text-[32px] font-bold sm:text-[40px]">
                     API Reference
                   </span>
                 </div>
@@ -858,12 +858,12 @@ const APIReference = () => {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-8">
+            <div className="grid grid-cols-1 gap-8 py-8 lg:grid-cols-2">
               <div className="space-y-5">
                 <div>
                   <span
                     id="authorization-and-testing"
-                    className="article-scrollspy-child scroll-mt-[100px] text-[22px] sm:text-[24px] font-medium leading-[26px] sm:leading-[28px]"
+                    className="article-scrollspy-child scroll-mt-[100px] text-[22px] font-medium leading-[26px] sm:text-[24px] sm:leading-[28px]"
                   >
                     Authorization and Testing
                   </span>
@@ -895,7 +895,7 @@ const APIReference = () => {
                   <div className="font-light">
                     <p>
                       Production API requests should be to{" "}
-                      <code className="text-[16px] font-mono">
+                      <code className="font-mono text-[16px]">
                         https://api.increase.com
                       </code>{" "}
                       and sandbox requests should be to{" "}
@@ -909,16 +909,16 @@ const APIReference = () => {
                 </div>
               </div>
 
-              <div className="top-8 w-full md:sticky text-white">
+              <div className="top-8 w-full text-white md:sticky">
                 <div className="pb-2">
-                  <span className="text-[14px] font-light leading-[20px] inline-block text-black">
+                  <span className="inline-block text-[14px] font-light leading-[20px] text-black">
                     In the sandbox:
                   </span>
                 </div>
 
                 <div className="pb-6">
-                  <div className="relative bg-gray-800 rounded-xl shadow-xl">
-                    <div className="scrollbar-hide relative overflow-auto py-5 font-mono text-[13px] leading-[20px] pl-4">
+                  <div className="relative rounded-xl bg-gray-800 shadow-xl">
+                    <div className="scrollbar-hide relative overflow-auto py-5 pl-4 font-mono text-[13px] leading-[20px]">
                       <div className="relative flex">
                         <div
                           aria-hidden="true"
@@ -951,15 +951,15 @@ const APIReference = () => {
                 </div>
 
                 <div className="pb-2">
-                  <span className="text-[14px] font-light leading-[20px] inline-block text-black">
+                  <span className="inline-block text-[14px] font-light leading-[20px] text-black">
                     In production (you'll need to retrieve your API key from the
                     dashboard):
                   </span>
                 </div>
 
                 <div className="pb-6">
-                  <div className="relative bg-gray-800 rounded-xl shadow-xl">
-                    <div className="scrollbar-hide relative overflow-auto py-5 font-mono text-[13px] leading-[20px] pl-4">
+                  <div className="relative rounded-xl bg-gray-800 shadow-xl">
+                    <div className="scrollbar-hide relative overflow-auto py-5 pl-4 font-mono text-[13px] leading-[20px]">
                       <div className="relative flex">
                         <div
                           aria-hidden="true"
@@ -992,14 +992,14 @@ const APIReference = () => {
                 </div>
 
                 <div className="pb-2">
-                  <span className="text-[14px] font-light leading-[20px] inline-block text-black">
+                  <span className="inline-block text-[14px] font-light leading-[20px] text-black">
                     You can then make an API request like this using cURL:
                   </span>
                 </div>
 
                 <div className="pb-6">
-                  <div className="relative bg-gray-800 rounded-xl shadow-xl">
-                    <div className="scrollbar-hide relative overflow-auto py-5 font-mono text-[13px] leading-[20px] pl-4">
+                  <div className="relative rounded-xl bg-gray-800 shadow-xl">
+                    <div className="scrollbar-hide relative overflow-auto py-5 pl-4 font-mono text-[13px] leading-[20px]">
                       <div className="relative flex">
                         <div
                           aria-hidden="true"

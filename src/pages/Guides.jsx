@@ -6,20 +6,20 @@ const Guides = () => {
   return (
     <>
       <SideBar />
-      <div className="h-screen w-full pt-[68px] lg:pl-[310px] overflow-y-hidden">
+      <div className="h-screen w-full overflow-y-hidden pt-[68px] lg:pl-[310px]">
         <div className="flex h-full justify-center text-gray-800">
           <div className="scrollbar-hide h-full max-w-[800px] grow overflow-y-hidden px-4 pt-4 md:px-16">
             <article className="max-w-4xl pb-20 pt-10">
               <div>
                 <span
-                  className="text-[28px] sm:text-[32px] font-bold leading-[30px] sm:leading-[36px] inline-block"
+                  className="inline-block text-[28px] font-bold leading-[30px] sm:text-[32px] sm:leading-[36px]"
                   style={{ fontStretch: "normal" }}
                 >
                   Documentation
                 </span>
               </div>
               <div className="mt-6">
-                <span className="text-[20px] font-normal leading-[26px] inline-block">
+                <span className="inline-block text-[20px] font-normal leading-[26px]">
                   Anything that you can achieve with PDFs, presence, and
                   persistence in a bank branch you can do with our API. We’ve
                   always wanted a fully programmatic bank so we built one.
@@ -27,7 +27,7 @@ const Guides = () => {
               </div>
               <div className="my-8 border-t border-gray-100"></div>
               <div className="mt-6">
-                <span className="text-[16px] font-normal leading-[24px] inline-block">
+                <span className="inline-block text-[16px] font-normal leading-[24px]">
                   Our API faithfully exposes the data and capabilities of the
                   Federal Reserve, Visa, The Clearing House, depository
                   networks, and accounting tools. It’s lovingly boring and
@@ -35,7 +35,7 @@ const Guides = () => {
                 </span>
               </div>
               <div className="mt-6">
-                <span className="text-[16px] font-normal leading-[24px] inline-block">
+                <span className="inline-block text-[16px] font-normal leading-[24px]">
                   If you have any questions or want to get started, don’t
                   hesitate to ping us at{" "}
                   <a href="mailto:sales@increase.com">sales@increase.com</a>. We
@@ -46,7 +46,7 @@ const Guides = () => {
             <div className="grid grid-cols-2 gap-3 pb-20 sm:grid-cols-3">
               <Link to="/api-reference">
                 <div className="bg-gray-0 cursor-pointer space-y-2 rounded-3xl border border-gray-200 px-4 py-6 shadow-sm transition hover:bg-whitesmoke">
-                  <div className="bg-yellow relative flex h-8 w-8 grow-0 items-center justify-center rounded-full">
+                  <div className="relative flex h-8 w-8 grow-0 items-center justify-center rounded-full bg-yellow">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -66,12 +66,12 @@ const Guides = () => {
                   </div>
                   <div>
                     <div>
-                      <span className="text-[16px] font-medium leading-[24px] inline-block tracking-tight">
+                      <span className="inline-block text-[16px] font-medium leading-[24px] tracking-tight">
                         API reference
                       </span>
                     </div>
                     <div>
-                      <span className="text-[14px] font-normal leading-[20px] inline-block">
+                      <span className="inline-block text-[14px] font-normal leading-[20px]">
                         Get started with our APIs
                       </span>
                     </div>
@@ -79,7 +79,7 @@ const Guides = () => {
                 </div>
               </Link>
               <div className="bg-gray-0 cursor-pointer space-y-2 rounded-3xl border border-gray-200 px-4 py-6 shadow-sm transition hover:bg-whitesmoke">
-                <div className="bg-yellow relative flex h-8 w-8 grow-0 items-center justify-center rounded-full">
+                <div className="relative flex h-8 w-8 grow-0 items-center justify-center rounded-full bg-yellow">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -99,12 +99,12 @@ const Guides = () => {
                 </div>
                 <div>
                   <div>
-                    <span className="text-[16px] font-medium leading-[24px] inline-block tracking-tight">
+                    <span className="inline-block text-[16px] font-medium leading-[24px] tracking-tight">
                       Changelog
                     </span>
                   </div>
                   <div>
-                    <span className="text-[14px] font-normal leading-[20px] inline-block">
+                    <span className="inline-block text-[14px] font-normal leading-[20px]">
                       Track all changes
                     </span>
                   </div>
@@ -113,17 +113,17 @@ const Guides = () => {
               <div className="bg-gray-0 col-span-2 flex cursor-pointer items-center space-x-2 space-y-2 rounded-3xl border border-gray-200 px-4 py-6 shadow-sm transition hover:bg-whitesmoke sm:col-span-1 sm:block">
                 <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-green-50/30">
                   <span className="absolute inline-flex h-3 w-3 animate-ping rounded-full bg-green-300 opacity-75"></span>
-                  <span className="bg-green-400 relative inline-flex h-3 w-3 rounded-full"></span>
+                  <span className="relative inline-flex h-3 w-3 rounded-full bg-green-400"></span>
                 </div>
                 <div>
                   <div>
                     <div>
-                      <span className="text-[16px] font-medium leading-[24px] inline-block tracking-tight">
+                      <span className="inline-block text-[16px] font-medium leading-[24px] tracking-tight">
                         Status
                       </span>
                     </div>
                     <div>
-                      <span className="text-[14px] font-normal leading-[20px] inline-block">
+                      <span className="inline-block text-[14px] font-normal leading-[20px]">
                         All systems operational
                       </span>
                     </div>
