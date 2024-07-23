@@ -1,0 +1,469 @@
+{
+    "sidebar": [
+        {
+            "title": "Overview",
+            "subsections": [
+                {
+                    "title": "API Reference",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "Authorization and Testing"
+                        },
+                        {
+                            "title": "OpenAPI"
+                        },
+                        {
+                            "title": "SDKs"
+                        },
+                        {
+                            "title": "OAuth"
+                        },
+                        {
+                            "title": "Requests and Responses"
+                        },
+                        {
+                            "title": "Object Lists"
+                        },
+                        {
+                            "title": "Errors"
+                        },
+                        {
+                            "title": "Idempotency"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Accounts",
+            "subsections": [
+                {
+                    "title": "Accounts",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Account object"
+                        },
+                        {
+                            "title": "List Accounts"
+                        },
+                        {
+                            "title": "Create an Account"
+                        },
+                        {
+                            "title": "Retrieve an Account"
+                        },
+                        {
+                            "title": "Update an Account"
+                        },
+                        {
+                            "title": "Retrieve an Account Balance"
+                        },
+                        {
+                            "title": "Close an Account"
+                        }
+                    ]
+                },
+                {
+                    "title": "Account Numbers",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Account Number object"
+                        },
+                        {
+                            "title": "List Account Numbers"
+                        },
+                        {
+                            "title": "Create an Account Number"
+                        },
+                        {
+                            "title": "Retrieve an Account Number"
+                        },
+                        {
+                            "title": "Update an Account Number"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Transactions",
+            "subsections": [
+                {
+                    "title": "Transactions",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Transaction object"
+                        },
+                        {
+                            "title": "List Transactions"
+                        },
+                        {
+                            "title": "Retrieve a Transaction"
+                        }
+                    ]
+                },
+                {
+                    "title": "Pending Transactions",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Pending Transaction object"
+                        },
+                        {
+                            "title": "List Pending Transactions"
+                        },
+                        {
+                            "title": "Retrieve a Pending Transaction"
+                        }
+                    ]
+                },
+                {
+                    "title": "Declined Transactions",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Declined Transaction object"
+                        },
+                        {
+                            "title": "List Declined Transactions"
+                        },
+                        {
+                            "title": "Retrieve a Declined Transaction"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Transfers",
+            "subsections": [
+                {
+                    "title": "Account Transfers",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Account Transfer object"
+                        },
+                        {
+                            "title": "List Account Transfers"
+                        },
+                        {
+                            "title": "Create an Account Transfer"
+                        },
+                        {
+                            "title": "Retrieve an Account Transfer"
+                        },
+                        {
+                            "title": "Approve an Account Transfer"
+                        },
+                        {
+                            "title": "Cancel an Account Transfer"
+                        }
+                    ]
+                },
+                {
+                    "title": "ACH Transfers",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The ACH Transfer object"
+                        },
+                        {
+                            "title": "List ACH Transfers"
+                        },
+                        {
+                            "title": "Create an ACH Transfer"
+                        },
+                        {
+                            "title": "Retrieve an ACH Transfer"
+                        },
+                        {
+                            "title": "Approve an ACH Transfer"
+                        },
+                        {
+                            "title": "Cancel a pending ACH Transfer"
+                        }
+                    ]
+                },
+                {
+                    "title": "ACH Prenotifications",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The ACH Prenotification object"
+                        },
+                        {
+                            "title": "List ACH Prenotifications"
+                        },
+                        {
+                            "title": "Create an ACH Prenotification"
+                        },
+                        {
+                            "title": "Retrieve an ACH Prenotification"
+                        }
+                    ]
+                },
+                {
+                    "title": "Inbound ACH Transfers",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Inbound ACH Transfer object"
+                        },
+                        {
+                            "title": "List Inbound ACH Transfers"
+                        },
+                        {
+                            "title": "Retrieve an Inbound ACH Transfer"
+                        },
+                        {
+                            "title": "Create a notification of change for an Inbound ACH Transfer"
+                        },
+                        {
+                            "title": "Decline an Inbound ACH Transfer"
+                        },
+                        {
+                            "title": "Return an Inbound ACH Transfer"
+                        }
+                    ]
+                },
+                {
+                    "title": "Wire Transfers",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Wire Transfer object"
+                        },
+                        {
+                            "title": "List Wire Transfers"
+                        },
+                        {
+                            "title": "Create a Wire Transfer"
+                        },
+                        {
+                            "title": "Retrieve a Wire Transfer"
+                        },
+                        {
+                            "title": "Approve a Wire Transfer"
+                        },
+                        {
+                            "title": "Cancel a pending Wire Transfer"
+                        }
+                    ]
+                },
+                {
+                    "title": "Inbound Wire Transfers",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Inbound Wire Transfer object"
+                        },
+                        {
+                            "title": "List Inbound Wire Transfers"
+                        },
+                        {
+                            "title": "Retrieve an Inbound Wire Transfer"
+                        }
+                    ]
+                },
+                {
+                    "title": "Wire Drawdown Requests",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Wire Drawdown Request object"
+                        },
+                        {
+                            "title": "List Wire Drawdown Requests"
+                        },
+                        {
+                            "title": "Create a Wire Drawdown Request"
+                        },
+                        {
+                            "title": "Retrieve a Wire Drawdown Request"
+                        }
+                    ]
+                },
+                {
+                    "title": "Inbound Wire Drawdown Requests",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Inbound Wire Drawdown Request object"
+                        },
+                        {
+                            "title": "List Inbound Wire Drawdown Requests"
+                        },
+                        {
+                            "title": "Retrieve an Inbound Wire Drawdown Request"
+                        }
+                    ]
+                },
+                {
+                    "title": "Check Transfers",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Check Transfer object"
+                        },
+                        {
+                            "title": "List Check Transfers"
+                        },
+                        {
+                            "title": "Create a Check Transfer"
+                        },
+                        {
+                            "title": "Retrieve a Check Transfer"
+                        },
+                        {
+                            "title": "Approve a Check Transfer"
+                        },
+                        {
+                            "title": "Cancel a pending Check Transfer"
+                        },
+                        {
+                            "title": "Request a stop payment on a Check Transfer"
+                        }
+                    ]
+                },
+                {
+                    "title": "Inbound Check Deposits",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Inbound Check Deposit object"
+                        },
+                        {
+                            "title": "List Inbound Check Deposits"
+                        },
+                        {
+                            "title": "Retrieve an Inbound Check Deposit"
+                        },
+                        {
+                            "title": "Decline an Inbound Check Deposit"
+                        },
+                        {
+                            "title": "Return an Inbound Check Deposit"
+                        }
+                    ]
+                },
+                {
+                    "title": "Real-Time Payments Transfers",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Real-Time Payments Transfer object"
+                        },
+                        {
+                            "title": "List Real-Time Payments Transfers"
+                        },
+                        {
+                            "title": "Create a Real-Time Payments Transfer"
+                        },
+                        {
+                            "title": "Retrieve a Real-Time Payments Transfer"
+                        }
+                    ]
+                },
+                {
+                    "title": "Check Desposits",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Check Deposit object"
+                        },
+                        {
+                            "title": "List Check Deposits"
+                        },
+                        {
+                            "title": "Create a Check Deposit"
+                        },
+                        {
+                            "title": "Retrieve a Check Deposit"
+                        }
+                    ]
+                },
+                {
+                    "title": "Lockboxes",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Lockbox object"
+                        },
+                        {
+                            "title": "List Lockboxes"
+                        },
+                        {
+                            "title": "Create a Lockbox"
+                        },
+                        {
+                            "title": "Retrieve a Lockbox"
+                        },
+                        {
+                            "title": "Update a Lockbox"
+                        }
+                    ]
+                },
+                {
+                    "title": "Inbound Mail Items",
+                    "subsections": [
+                        {
+                            "title": "Overview"
+                        },
+                        {
+                            "title": "The Inbound Mail Item object"
+                        },
+                        {
+                            "title": "List Inbound Mail Items"
+                        },
+                        {
+                            "title": "Retrieve an Inbound Mail Item"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
