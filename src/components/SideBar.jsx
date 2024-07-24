@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ChevronIcon from "./ChevronIcon";
 
 const SideBar = () => {
   const [sidebarStructure, setSidebarStructure] = useState([]);
@@ -22,44 +23,6 @@ const SideBar = () => {
 };
 
 export default SideBar;
-
-const rightCaret = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="14"
-    height="14"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.75"
-    className="transition-all"
-    viewBox="0 0 14 14"
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="m6 12 4-4-4-4"></path>
-  </svg>
-);
-
-const downCaret = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="14"
-    height="14"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.75"
-    className="rotate-90 transition-all"
-    viewBox="0 0 14 14"
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="m6 12 4-4-4-4"></path>
-  </svg>
-);
-
-const Link = ({ children }) => {
-  return (
-    <a className="block cursor-pointer rounded-md px-2 py-1 text-gray-600 hover:bg-gray-50 hover:text-gray-800">
-      {children}
-    </a>
-  );
-};
 
 const Section = ({ section }) => {
   return (
@@ -96,7 +59,11 @@ const SubSection = ({ subsection }) => {
         </span>
         <div className="flex grow" />
 
-        {isOpen === false ? rightCaret : downCaret}
+        {isOpen === false ? (
+          <ChevronIcon />
+        ) : (
+          <ChevronIcon orientation={"down"} />
+        )}
       </div>
 
       {isOpen && (
@@ -107,5 +74,13 @@ const SubSection = ({ subsection }) => {
         </div>
       )}
     </div>
+  );
+};
+
+const Link = ({ children }) => {
+  return (
+    <a className="block cursor-pointer rounded-md px-2 py-1 text-gray-600 hover:bg-gray-50 hover:text-gray-800">
+      {children}
+    </a>
   );
 };
