@@ -5,7 +5,7 @@ const Spacer = () => {
   return <div className="grow" />;
 };
 
-export const NavigationBar = () => {
+const NavigationBar = () => {
   const [activeLink, setActiveLink] = useState("/");
   const location = useLocation();
 
@@ -55,3 +55,5 @@ export const NavigationBar = () => {
     </>
   );
 };
+
+export default NavigationBar;
