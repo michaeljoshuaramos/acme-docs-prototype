@@ -198,12 +198,11 @@ const Tag = ({ type, children, className }) => {
   const tags = {
     nullable: {
       text: "Nullable",
-      style: `${defaults.style} text-blue-700 bg-blue-100`,
+      style: `${defaults.style} bg-blue-100 text-blue-700`,
     },
     required: {
       text: "Required",
-      style:
-        "rounded-[5px] bg-green-100 px-1.5 py-0.5 text-[12px] font-normal text-green-700",
+      style: `${defaults.style} bg-green-100 text-green-700`,
     },
   };
 
