@@ -188,35 +188,35 @@ const Attributes = ({ resource }) => {
   );
 };
 
-const Tag = ({ type }) => {
-  let tag;
+const Tag = ({ type, children, className }) => {
+  // Define default style and tag options
+  const defaults = {
+    style:
+      "rounded-[5px] bg-gray-100 px-1.5 py-0.5 text-[12px] font-normal text-gray-700",
+  };
 
-  switch (type) {
-    case "nullable":
-      tag = (
-        <div className="px-2">
-          <span className="rounded-[4px] bg-blue-100 px-1.5 py-0.5 text-[12px] font-normal text-blue-700">
-            Nullable
-          </span>
-        </div>
-      );
-      break;
+  const tags = {
+    nullable: {
+      text: "Nullable",
+      style: `${defaults.style} text-blue-700 bg-blue-100`,
+    },
+    required: {
+      text: "Required",
+      style:
+        "rounded-[5px] bg-green-100 px-1.5 py-0.5 text-[12px] font-normal text-green-700",
+    },
+  };
 
-    case "required":
-      tag = (
-        <div className="px-2">
-          <span className="rounded-[4px] bg-green-100 px-1.5 py-0.5 text-[12px] font-normal text-green-700">
-            Required
-          </span>
-        </div>
-      );
-      break;
+  // Determine which style and text to use
+  const { text, style } = type
+    ? tags[type]
+    : { text: children, style: `${defaults.style} ${className}` };
 
-    default:
-      tag = null;
-  }
-
-  return tag;
+  return (
+    <div className="px-2">
+      <span className={style}>{text}</span>
+    </div>
+  );
 };
 
 const Attribute = ({ attribute }) => {
@@ -235,7 +235,7 @@ const Attribute = ({ attribute }) => {
         </div>
         <div className="grow"></div>
 
-        {attribute.optional && <Tag type={"nullable"} />}
+        {attribute.optional && <Tag type="nullable" />}
 
         <div>
           <p className="cursor-pointer text-[14px] font-semibold text-gray-300 hover:text-gray-500 md:text-gray-200">
@@ -317,7 +317,7 @@ const Parameter = ({ parameter }) => {
           </span>
         </div>
         <div className="grow"></div>
-        {!parameter.optional && <Tag type={"required"} />}
+        {!parameter.optional && <Tag type="required" />}
         <div>
           <p className="cursor-pointer text-[14px] font-semibold text-gray-300 hover:text-gray-500 md:text-gray-200">
             Copy
