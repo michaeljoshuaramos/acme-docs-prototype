@@ -12,7 +12,7 @@ const SideBar = () => {
   }, []);
 
   return (
-    <div className="fixed left-0 top-[68px] z-10 h-[calc(100vh-68px)] w-[320px] overflow-y-scroll border-r border-gray-100 bg-white px-4 py-4 font-medium">
+    <div className="fixed left-0 top-[68px] z-10 h-[calc(100vh-68px)] w-[320px] overflow-y-scroll border-r border-gray-100 bg-white p-4 font-medium">
       <div className="space-y-4 divide-y divide-gray-100">
         {sidebarStructure.map((section, sectionIndex) => (
           <Section key={sectionIndex} section={section} />
