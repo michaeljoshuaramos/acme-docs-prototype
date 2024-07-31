@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import PossibleValuesButton from "../components/PossibleValuesButton";
 import Markdown from "react-markdown";
+import ChevronIcon from "../components/ChevronIcon";
 
 const APIReference = ({ navigation }) => {
   return (
@@ -28,6 +29,11 @@ const markdownComponents = {
   ),
   p: ({ children }) => (
     <p className="text-[14px] font-light text-gray-700">{children}</p>
+  ),
+  code: ({ children }) => (
+    <code className="rounded-md bg-gray-100 px-1.5 py-0.5 font-mono text-[14px] text-gray-500">
+      {children}
+    </code>
   ),
 };
 
@@ -63,8 +69,8 @@ const Example = ({ section }) => {
     <div className="h-full">
       <div className="sticky top-32 text-white">
         <div className="relative rounded-2xl bg-gray-800 shadow-xl">
-          <div className="scrollbar-hide relative overflow-hidden py-5 pl-4 font-mono text-[13px] leading-[20px]">
-            <div className="relative flex">
+          <div className="scrollbar-hide relative overflow-hidden py-5 pl-4 font-mono text-[14px] leading-[16px]">
+            <div className="flex">
               <div
                 aria-hidden="true"
                 className="mr-4 hidden w-[20px] flex-none select-none text-right text-gray-600 sm:block"
@@ -219,48 +225,83 @@ const Tag = ({ type, children, className }) => {
 };
 
 const Attribute = ({ attribute }) => {
-  const [areCasesDisplayed, setAreCasesDisplayed] = useState(false);
-  const hasCases = attribute.cases !== undefined;
-
   return (
     <div className="flex flex-col gap-2 py-3">
-      <div className="flex items-baseline">
-        <div>
-          <span className="text-[16px] font-semibold">{attribute.name}</span>
-          <span> </span>
-          <span className="text-[14px] font-semibold text-gray-300">
-            {attribute.kind}
-          </span>
-        </div>
-        <div className="grow"></div>
+      <AttributeHeader attribute={attribute} />
+      <AttributeBody attribute={attribute} />
+      <AttributeList attribute={attribute} />
+    </div>
+  );
+};
 
-        {attribute.optional && <Tag type="nullable" />}
+const AttributeHeader = ({ attribute }) => {
+  return (
+    <div className="flex items-baseline">
+      <div>
+        <span className="text-[16px] font-semibold">{attribute.name}</span>
+        <span> </span>
+        <span className="text-[14px] font-semibold text-gray-300">
+          {attribute.kind}
+        </span>
+      </div>
+      <div className="grow"></div>
 
-        <div>
-          <p className="cursor-pointer text-[14px] font-semibold text-gray-300 hover:text-gray-500 md:text-gray-200">
-            Copy
-          </p>
-        </div>
-      </div>
+      {attribute.optional && <Tag type="nullable" />}
+
       <div>
-        <Markdown components={markdownComponents}>
-          {attribute.documentation}
-        </Markdown>
-      </div>
-      <div>
-        {hasCases ? (
-          !areCasesDisplayed ? (
-            <PossibleValuesButton
-              showValues={() => setAreCasesDisplayed(true)}
-            />
-          ) : (
-            <button onClick={() => setAreCasesDisplayed(false)}>
-              Hide Cases
-            </button>
-          )
-        ) : null}
+        <p className="cursor-pointer text-[14px] font-semibold text-gray-300 hover:text-gray-500 md:text-gray-200">
+          Copy
+        </p>
       </div>
     </div>
+  );
+};
+
+const AttributeBody = ({ attribute }) => {
+  return (
+    <div>
+      <Markdown components={markdownComponents}>
+        {attribute.documentation}
+      </Markdown>
+    </div>
+  );
+};
+
+const AttributeList = ({ attribute }) => {
+  const [displayCases, setDisplayCases] = useState(false);
+  const cases = attribute.cases;
+
+  return (
+    <>
+      {cases ? (
+        <div className="py-1">
+          {!displayCases ? (
+            <PossibleValuesButton onClick={() => setDisplayCases(true)} />
+          ) : (
+            <PossibleValues
+              values={cases}
+              onClick={() => setDisplayCases(false)}
+            />
+          )}
+        </div>
+      ) : null}
+    </>
+  );
+};
+
+const Methods = ({ methods }) => {
+  return (
+    <>
+      {methods &&
+        methods.map((method, index) => (
+          <div
+            key={index}
+            className="xxl:py-12 grid grid-cols-2 gap-8 py-8 xl:gap-12"
+          >
+            <Method method={method} />
+          </div>
+        ))}
+    </>
   );
 };
 
@@ -302,61 +343,111 @@ const Parameters = ({ parameters }) => {
 };
 
 const Parameter = ({ parameter }) => {
-  const [areCasesDisplayed, setAreCasesDisplayed] = useState(false);
-  const hasCases = parameter.cases !== undefined;
-
   return (
     <div className="flex flex-col gap-2 py-3">
-      <div className="flex items-baseline">
-        <div>
-          <span className="text-[16px] font-semibold">{parameter.name}</span>
-          <span> </span>
-          <span className="text-[14px] font-semibold text-gray-300">
-            {parameter.kind}
-          </span>
-        </div>
-        <div className="grow"></div>
-        {!parameter.optional && <Tag type="required" />}
-        <div>
-          <p className="cursor-pointer text-[14px] font-semibold text-gray-300 hover:text-gray-500 md:text-gray-200">
-            Copy
-          </p>
-        </div>
-      </div>
-      <div>
-        <Markdown components={markdownComponents}>
-          {parameter.documentation}
-        </Markdown>
-      </div>
-      <div>
-        {hasCases ? (
-          !areCasesDisplayed ? (
-            <PossibleValuesButton
-              showValues={() => setAreCasesDisplayed(true)}
-            />
+      <ParameterHeader parameter={parameter} />
+      <ParameterBody parameter={parameter} />
+      <ParameterList parameter={parameter} />
+    </div>
+  );
+};
+
+const ParameterList = ({ parameter }) => {
+  const [displayCases, setDisplayCases] = useState(false);
+  const cases = parameter.cases;
+
+  return (
+    <>
+      {cases ? (
+        <div className="py-1">
+          {!displayCases ? (
+            <PossibleValuesButton onClick={() => setDisplayCases(true)} />
           ) : (
-            <button onClick={() => setAreCasesDisplayed(false)}>
-              Hide Cases
-            </button>
-          )
-        ) : null}
+            <PossibleValues
+              values={cases}
+              onClick={() => setDisplayCases(false)}
+            />
+          )}
+        </div>
+      ) : null}
+    </>
+  );
+};
+
+const ParameterBody = ({ parameter }) => {
+  return (
+    <div>
+      <Markdown components={markdownComponents}>
+        {parameter.documentation}
+      </Markdown>
+    </div>
+  );
+};
+
+const ParameterHeader = ({ parameter }) => {
+  return (
+    <div className="flex items-baseline">
+      <div>
+        <span className="text-[16px] font-semibold">{parameter.name}</span>
+        <span> </span>
+        <span className="text-[14px] font-semibold text-gray-300">
+          {parameter.kind}
+        </span>
+      </div>
+      <div className="grow"></div>
+      {!parameter.optional && <Tag type="required" />}
+      <div>
+        <span className="cursor-pointer text-[14px] font-semibold text-gray-300 hover:text-gray-500 md:text-gray-200">
+          Copy
+        </span>
       </div>
     </div>
   );
 };
 
-const Methods = ({ methods }) => {
+// Why is the "<div className="grow">" element not growing?
+
+const PossibleValues = ({ values, onClick }) => {
   return (
-    <>
-      {methods &&
-        methods.map((method, index) => (
-          <div
-            key={index}
-            className="xxl:py-12 grid grid-cols-2 gap-8 py-8 xl:gap-12"
-          >
-            <Method method={method} />
-          </div>
-        ))}
-    </>
+    <div className="rounded-lg border border-gray-200">
+      <button
+        className="flex w-full cursor-pointer items-baseline gap-1.5 rounded-t-lg bg-gray-100 px-2.5"
+        onClick={onClick}
+      >
+        <ChevronIcon orientation="down" />
+
+        <div className="grow text-left">
+          <span className="text-[14px] font-semibold leading-7">
+            Possible Values
+          </span>
+        </div>
+      </button>
+      <div className="divide-y divide-gray-100">
+        {values &&
+          values.map((value, index) => <Value key={index} value={value} />)}
+      </div>
+    </div>
+  );
+};
+
+const Value = ({ value }) => {
+  return (
+    <div className="p-2">
+      <div className="flex items-center justify-between">
+        <span className="bg-gray-50 px-1 font-mono text-[14px] leading-5 text-gray-600">
+          {value.name}
+        </span>
+        <div>
+          <span className="cursor-pointer text-[14px] font-semibold text-gray-300 hover:text-gray-500 md:text-gray-200">
+            Copy
+          </span>
+        </div>
+      </div>
+      <div>
+        <Markdown components={markdownComponents}>
+          {value.documentation}
+        </Markdown>
+      </div>
+    </div>
   );
 };
