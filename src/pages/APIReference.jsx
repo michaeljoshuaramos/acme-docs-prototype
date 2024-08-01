@@ -218,7 +218,7 @@ const Tag = ({ type, children, className }) => {
   const tags = {
     nullable: {
       text: "Nullable",
-      style: `${defaults.style} bg-blue-100 text-blue-700`,
+      style: `${defaults.style} bg-sky-100 text-sky-700`,
     },
     required: {
       text: "Required",
@@ -422,8 +422,6 @@ const ParameterHeader = ({ parameter }) => {
     </div>
   );
 };
-
-// Why is the "<div className="grow">" element not growing?
 
 const PossibleValues = ({ values, onClick }) => {
   return (
