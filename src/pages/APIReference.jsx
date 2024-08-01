@@ -41,7 +41,7 @@ const Main = () => {
   const [sections, setSections] = useState(null);
 
   useEffect(() => {
-    fetch("../../public/data/documentation.json")
+    fetch("/data/documentation.json")
       .then((response) => response.json())
       .then((data) => setSections(data.props.pageProps.schema.namespaces))
       .catch((error) => console.error("Error fetching documentation: ", error));
