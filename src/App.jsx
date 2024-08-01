@@ -1,17 +1,42 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { NavigationBar } from "./components/NavigationBar";
 import Guides from "./pages/Guides";
 import APIReference from "./pages/APIReference";
 import Changelog from "./pages/Changelog";
+import NavigationBar from "./components/NavigationBar";
+import SideBar from "./components/SideBar";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<NavigationBar />}>
-            <Route index element={<Guides />} />
-            <Route path="api-reference" element={<APIReference />} />
+          <Route path="/">
+            <Route
+              index
+              element={
+                <Guides
+                  navigation={
+                    <>
+                      <NavigationBar />
+                      <SideBar />
+                    </>
+                  }
+                />
+              }
+            />
+            <Route
+              path="api-reference"
+              element={
+                <APIReference
+                  navigation={
+                    <>
+                      <NavigationBar />
+                      <SideBar />
+                    </>
+                  }
+                />
+              }
+            />
             <Route path="changelog" element={<Changelog />} />
           </Route>
         </Routes>

@@ -1,14 +1,16 @@
 import React from "react";
 import SideBar from "../components/SideBar";
+import NavigationBar from "../components/NavigationBar";
 import { Link, Outlet } from "react-router-dom";
 
-const Guides = () => {
+const Guides = ({ navigation }) => {
   return (
     <>
-      <SideBar />
+      {navigation}
+
       <div className="h-screen w-full overflow-y-hidden pt-[68px] lg:pl-[310px]">
         <div className="flex h-full justify-center text-gray-800">
-          <div className="scrollbar-hide h-full max-w-[800px] grow overflow-y-hidden px-4 pt-4 md:px-16">
+          <div className="scrollbar-hide h-full max-w-[800px] grow overflow-y-hidden p-4 md:px-16">
             <article className="max-w-4xl pb-20 pt-10">
               <div>
                 <span
