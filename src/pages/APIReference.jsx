@@ -48,28 +48,32 @@ const Main = () => {
   }, []);
 
   return (
-    <div className="divide-y divide-gray-100 pl-[320px] pt-[68px] text-gray-800">
-      {sections &&
-        sections.map((section, index) => (
-          <div key={index} className="px-8 sm:px-16">
-            <Overview section={section}>
-              <Resource section={section} />
-              <Example section={section} />
-            </Overview>
+    <div className="pl-[320px] pt-[68px]">
+      <div className="mx-auto max-w-[1500px] divide-y divide-gray-100 text-gray-800">
+        {sections &&
+          sections.map((section, index) => (
+            <div key={index} className="px-8 sm:px-16">
+              <Overview section={section}>
+                <Resource section={section} />
+                <Example section={section} />
+              </Overview>
 
-            <Methods methods={section.methods} />
-          </div>
-        ))}
+              <Methods methods={section.methods} />
+            </div>
+          ))}
+      </div>
     </div>
   );
 };
 
 const Example = ({ section }) => {
+  const tab = "    ";
+
   return (
     <div className="h-full">
       <div className="sticky top-32 text-white">
         <div className="relative rounded-2xl bg-gray-800 shadow-xl">
-          <div className="scrollbar-hide relative overflow-hidden py-5 pl-4 font-mono text-[14px] leading-[16px]">
+          <div className="scrollbar-hide relative overflow-x-hidden py-5 pl-4 font-mono text-[14px] leading-[16px]">
             <div className="flex">
               <div
                 aria-hidden="true"
@@ -85,10 +89,10 @@ const Example = ({ section }) => {
               <pre className="pr-6">
                 <div className="language-json style_code__vt0Fy">
                   <div>
-                    <span className="hljs-punctuation">z</span>
+                    <span className="hljs-punctuation">&#123;</span>
                   </div>
                   <div>
-                    <span className="hljs-attr">"detail"</span>
+                    <span className="hljs-attr">{tab}detail</span>
                     <span className="hljs-punctuation">:</span>{" "}
                     <span className="hljs-string">
                       "There's an insufficient balance in the account."
@@ -96,13 +100,13 @@ const Example = ({ section }) => {
                     <span className="hljs-punctuation">,</span>
                   </div>
                   <div>
-                    <span className="hljs-attr">"status"</span>
+                    <span className="hljs-attr">{tab}status</span>
                     <span className="hljs-punctuation">:</span>{" "}
                     <span className="hljs-string">"400"</span>
                     <span className="hljs-punctuation">,</span>
                   </div>
                   <div>
-                    <span className="hljs-attr">"title"</span>
+                    <span className="hljs-attr">{tab}title</span>
                     <span className="hljs-punctuation">:</span>{" "}
                     <span className="hljs-string">
                       "The action you specified can't be performed on the object
@@ -111,14 +115,14 @@ const Example = ({ section }) => {
                     <span className="hljs-punctuation">,</span>
                   </div>
                   <div>
-                    <span className="hljs-attr">"type"</span>
+                    <span className="hljs-attr">{tab}type</span>
                     <span className="hljs-punctuation">:</span>{" "}
                     <span className="hljs-string">
                       "invalid_operation_error"
                     </span>
                   </div>
                   <div>
-                    <span className="hljs-punctuation">z</span>
+                    <span className="hljs-punctuation">&#125;</span>
                   </div>
                 </div>
               </pre>
@@ -135,6 +139,7 @@ const Example = ({ section }) => {
 const Overview = ({ children, section }) => {
   if (!section) return null;
 
+  const id = String(section.title).toLowerCase().replace(/ /g, "-");
   const title = section.title;
   const description = section.documentation;
 
@@ -142,7 +147,12 @@ const Overview = ({ children, section }) => {
     <>
       <div className="xxl:py-12 grid grid-cols-2 gap-8 py-8 xl:gap-12">
         <div>
-          <span className="text-[32px] font-bold sm:text-[40px]">{title}</span>
+          <span
+            id={id}
+            className="scroll-mt-[100px] text-[32px] font-bold sm:text-[40px]"
+          >
+            {title}
+          </span>
           <p className="font-light tracking-wide">{description}</p>
         </div>
       </div>
@@ -159,11 +169,15 @@ const Resource = ({ section }) => {
 
   const resource = section.resource;
   const title = resource.title;
+  const id = String(`the ${title} object`).toLowerCase().replace(/ /g, "-");
 
   return (
     <div>
       <div>
-        <span className="text-[22px] font-medium leading-[26px] sm:text-[24px] sm:leading-[28px]">
+        <span
+          id={id}
+          className="scroll-mt-[100px] text-[22px] font-medium leading-[26px] sm:text-[24px] sm:leading-[28px]"
+        >
           {"The "}
           {title}
           {" object"}
@@ -310,11 +324,15 @@ const Method = ({ method }) => {
 
   const title = method.title;
   const parameters = method.parameters;
+  const id = String(title).toLowerCase().replace(/ /g, "-");
 
   return (
     <div>
       <div>
-        <span className="text-[22px] font-medium leading-[26px] sm:text-[24px] sm:leading-[28px]">
+        <span
+          id={id}
+          className="scroll-mt-[100px] text-[22px] font-medium leading-[26px] sm:text-[24px] sm:leading-[28px]"
+        >
           {title}
         </span>
       </div>

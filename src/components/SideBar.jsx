@@ -39,18 +39,18 @@ const Section = ({ section }) => {
 };
 
 const SubSection = ({ subsection }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [hideSubSection, setHideSubSection] = useState(true);
 
   return (
     <div>
       <div
         className="flex items-center rounded-md px-2 py-1 hover:bg-gray-50"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setHideSubSection(!hideSubSection)}
         tabIndex="0"
         role="button"
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
-            setIsOpen(!isOpen);
+            setHideSubSection(!hideSubSection);
           }
         }}
       >
@@ -59,27 +59,38 @@ const SubSection = ({ subsection }) => {
         </span>
         <div className="flex grow" />
 
-        {isOpen === false ? (
+        {hideSubSection ? (
           <ChevronIcon />
         ) : (
           <ChevronIcon orientation={"down"} />
         )}
       </div>
 
-      {isOpen && (
+      {!hideSubSection && (
         <div className="text-[14px] font-normal leading-[20px]">
-          {subsection.subsections.map((subsubSection, subsubSectionIndex) => (
-            <Link key={subsubSectionIndex}>{subsubSection.title}</Link>
-          ))}
+          {subsection.subsections.map((subsubSection, subsubSectionIndex) => {
+            const id = String(subsubSection.title)
+              .toLowerCase()
+              .replace(/ /g, "-");
+
+            return (
+              <Link href={`#${id}`} key={subsubSectionIndex}>
+                {subsubSection.title}
+              </Link>
+            );
+          })}
         </div>
       )}
     </div>
   );
 };
 
-const Link = ({ children }) => {
+const Link = ({ href, children }) => {
   return (
-    <a className="block cursor-pointer rounded-md px-2 py-1 text-gray-600 hover:bg-gray-50 hover:text-gray-800">
+    <a
+      href={href}
+      className="block cursor-pointer rounded-md px-2 py-1 text-gray-600 hover:bg-gray-50 hover:text-gray-800"
+    >
       {children}
     </a>
   );
