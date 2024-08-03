@@ -1,6 +1,4 @@
 import React from "react";
-import SideBar from "../components/SideBar";
-import NavigationBar from "../components/NavigationBar";
 import { Link, Outlet } from "react-router-dom";
 
 const Guides = ({ navigation }) => {

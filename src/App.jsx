@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Guides from "./pages/Guides";
 import APIReference from "./pages/APIReference";
 import Changelog from "./pages/Changelog";
-import NavigationBar from "./components/NavigationBar";
+import NavigationBar from "./components/Containers/NavBar/NavigationBar";
 import SideBar from "./components/SideBar";
 
 function App() {
