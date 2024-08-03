@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import NavItem from "./NavItem";
 
 const NavigationBar = () => {
-  const [activeLink, setActiveLink] = useState("/");
   const location = useLocation();
-
-  useEffect(() => {
-    setActiveLink(location.pathname);
-  }, [location.pathname]);
 
   return (
     <>
@@ -16,13 +11,13 @@ const NavigationBar = () => {
         <div className="flex divide-x">
           <span className="pr-6 font-semibold text-black">Acme Docs</span>
           <div className="space-x-4 pl-6">
-            <NavItem activeLink={activeLink} target="/">
+            <NavItem path={location.pathname} target="/">
               Guides
             </NavItem>
-            <NavItem activeLink={activeLink} target="/api-reference">
+            <NavItem path={location.pathname} target="/api-reference">
               API Reference
             </NavItem>
-            <NavItem activeLink={activeLink} target="/changelog">
+            <NavItem path={location.pathname} target="/changelog">
               Changelog
             </NavItem>
           </div>
