@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import ChevronIcon from "./ChevronIcon";
+import ChevronIcon from "../../Icons/ChevronIcon";
 
 const SideBar = () => {
   const [sidebarStructure, setSidebarStructure] = useState([]);
 
   useEffect(() => {
-    fetch("../../data/sidebar.json")
+    fetch("/data/sidebar.json")
       .then((response) => response.json())
       .then((data) => setSidebarStructure(data.sidebar))
       .catch((error) => console.error("Error fetching sidebar data:", error));

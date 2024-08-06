@@ -3,7 +3,7 @@ import Guides from "./pages/Guides";
 import APIReference from "./pages/APIReference";
 import Changelog from "./pages/Changelog";
 import NavigationBar from "./components/Containers/NavBar/NavigationBar";
-import SideBar from "./components/SideBar";
+import SideBar from "./components/Containers/SideBar/SideBar";
 
 function App() {
   return (

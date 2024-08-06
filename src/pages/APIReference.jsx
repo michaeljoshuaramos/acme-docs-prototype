@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import PossibleValuesButton from "../components/PossibleValuesButton";
+import PossibleValuesButton from "../components/Common/PossibleValuesButton";
 import Markdown from "react-markdown";
-import ChevronIcon from "../components/ChevronIcon";
+import ChevronIcon from "../components/Icons/ChevronIcon";
 
 const APIReference = ({ navigation }) => {
   return (
