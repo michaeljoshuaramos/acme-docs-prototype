@@ -38,6 +38,7 @@ function App() {
               }
             />
             <Route path="changelog" element={<Changelog />} />
+            <Route path="login" element={<Changelog />} />
           </Route>
         </Routes>
       </BrowserRouter>

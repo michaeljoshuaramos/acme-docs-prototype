@@ -1,31 +1,28 @@
 import React from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import NavItem from "./NavItem";
+import Acme from "../../Icons/Logos/Acme";
+import Button from "../../Common/Button";
 
 const NavigationBar = () => {
-  const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <>
       <nav className="fixed z-10 flex h-[68px] w-full items-center justify-between border-b border-gray-100 bg-white/95 px-6 backdrop-blur">
         <div className="flex divide-x">
-          <span className="pr-6 font-semibold text-black">Acme Docs</span>
+          <div className="flex items-center pr-6">
+            <Acme />
+            <span className="font-semibold text-black">Acme Docs</span>
+          </div>
           <div className="space-x-4 pl-6">
-            <NavItem path={location.pathname} target="/">
-              Guides
-            </NavItem>
-            <NavItem path={location.pathname} target="/api-reference">
-              API Reference
-            </NavItem>
-            <NavItem path={location.pathname} target="/changelog">
-              Changelog
-            </NavItem>
+            <NavItem path="/">Guides</NavItem>
+            <NavItem path="/api-reference">API Reference</NavItem>
+            <NavItem path="/changelog">Changelog</NavItem>
           </div>
         </div>
         <div>
-          <button className="cursor-pointer rounded-md bg-gray-500 px-3 py-1 text-[14px] font-medium leading-[20px] text-white">
-            Login
-          </button>
+          <Button onClick={() => navigate("/login")}>Login</Button>
         </div>
       </nav>
 
